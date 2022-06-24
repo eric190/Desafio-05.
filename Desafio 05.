@@ -1,0 +1,168 @@
+using Desafio__03;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using CsvHelper;
+
+namespace Desafio__05
+{
+    //Classe publica
+    public class Program
+    {
+        static void Main(string[] args)
+
+        {
+            //Lista
+            List<Aluno> listaAluno = new List<Aluno>();
+
+            Aluno aluno = new Aluno();
+            aluno.Nome = "José";
+            aluno.Nota =8; 
+          
+
+            Aluno aluno2 = new Aluno();
+            aluno.Nome = "José";
+            aluno.Nota = 7;
+
+            foreach (Aluno aluno1 in listaAluno)
+            {
+                Console.WriteLine("A soma da nota dos alunos é: " + (aluno.Nota + aluno2.Nota));
+            }
+
+            listaAluno.Add(aluno);
+
+            Console.ReadLine();
+            foreach (Aluno item in listaAluno)
+            { 
+                Console.WriteLine(aluno);
+                Console.WriteLine(aluno2);
+            }
+        }
+        
+    }
+}
+
+    //        System.Collections.Generic.List<string> Alunos = new System.Collections.Generic.List<string>();
+    //        System.Collections.Generic.List<int> Nota = new System.Collections.Generic.List<int>();
+
+//        string nome1 = "João";
+//        int idade1 = 18;
+//        int n1 = 8;
+
+//        string nome2 = "Larissa";
+//        int idade2 = 29;
+//        int n2 = 7;
+
+//        string nome3 = "Marcos";
+//        int idade3 = 33;
+//        int n3 = 9;
+
+
+
+
+//    }
+//}
+
+//namespace app
+//{
+
+//    class Aluno
+//    {
+
+//        public string nome = "";
+//        public float nota = 0;
+//        public int idade = 0;
+
+
+//        public Aluno(string inputNome, float inputNota, int inputIdade)
+//        {
+
+//            nome = inputNome;
+//            nota = inputNota;
+//            idade = inputIdade;
+//        }
+
+//    }
+
+//    class Program
+//    {
+//       // static void Main(string[] args)
+
+//            List<Aluno> listaAlunos = new List<Aluno>();
+
+
+//        }
+
+
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Desafio__03
+{
+    public class Aluno
+    {
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        public int Nota { get; set; }
+
+
+        public static implicit operator string(Aluno aluno)
+
+           => $"{aluno.Nome}, {aluno.Idade}, {aluno.Nota}";
+        using (var mem = new MemoryStream())
+        using (var writer = new StreamWriter(mem))
+        using (var csvWriter = new CsvWriter())
+        {
+           csvWriter. Configuration.Delimiter = ";";
+           CsvWriter.Configuration.HasHeaderRecord = true;
+           CsvWriter.Configuration.AutoMap<Project>();
+
+
+           csvWriter.WriteHeader<Poject>();
+           csvWriter.WriteRecords(data);
+
+
+}
+
+}
